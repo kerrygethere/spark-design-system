@@ -28,7 +28,10 @@ class SprkDatePickerInput extends Component {
     TinyDatePicker(
       this.datePickerInputRef.current,
       assign(this.tdpConfig, datePickerConfig),
-    );
+    ).on('select', (_, dp) => {
+      // here's where we should see the select callback fire
+      console.log(dp.state.selectedDate)
+    })
   }
 
   render() {
